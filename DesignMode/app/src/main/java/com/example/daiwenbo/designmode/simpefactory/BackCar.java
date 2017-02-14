@@ -1,14 +1,12 @@
-package com.example.daiwenbo.designmode.factory;
+package com.example.daiwenbo.designmode.simpefactory;
+
+import com.example.daiwenbo.designmode.annotatio.CarColor;
 
 /**
  * Created by daiwenbo on 17/2/14.
  */
-
+@CarColor(color="BACK")
 public class BackCar extends Car {
-    public BackCar() {
-        this.name="黑色";
-    }
-
     @Override
     public String drive() {
         return name+Car.CARSTYLE;

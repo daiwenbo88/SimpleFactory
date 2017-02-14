@@ -1,4 +1,4 @@
-package com.example.daiwenbo.designmode.factory;
+package com.example.daiwenbo.designmode.simpefactory;
 
 /**
  * Created by daiwenbo on 17/2/14.
