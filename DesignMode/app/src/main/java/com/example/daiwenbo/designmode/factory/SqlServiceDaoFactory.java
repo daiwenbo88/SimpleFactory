@@ -1,11 +1,10 @@
 package com.example.daiwenbo.designmode.factory;
 
 import com.example.daiwenbo.designmode.factory.dao.product.IProductDao;
-import com.example.daiwenbo.designmode.factory.dao.product.MySqlProductDao;
+import com.example.daiwenbo.designmode.factory.dao.product.SqlServiceProductDao;
 import com.example.daiwenbo.designmode.factory.dao.role.IRoleDao;
-import com.example.daiwenbo.designmode.factory.dao.role.MySqlRoleDao;
+import com.example.daiwenbo.designmode.factory.dao.role.SqlServiceRoleDao;
 import com.example.daiwenbo.designmode.factory.dao.user.IUserDao;
-import com.example.daiwenbo.designmode.factory.dao.user.MySqlUserDao;
 import com.example.daiwenbo.designmode.factory.dao.user.SqlServiceUserDao;
 
 /**
@@ -15,16 +14,16 @@ import com.example.daiwenbo.designmode.factory.dao.user.SqlServiceUserDao;
 public class SqlServiceDaoFactory implements IDaoFactory {
     @Override
     public IUserDao createUserDao() {
-        return new MySqlUserDao();
+        return new SqlServiceUserDao();
     }
 
     @Override
     public IRoleDao createRoleDao() {
-        return new MySqlRoleDao();
+        return new SqlServiceRoleDao();
     }
 
     @Override
     public IProductDao createProductDao() {
-        return new MySqlProductDao();
+        return new SqlServiceProductDao();
     }
 }

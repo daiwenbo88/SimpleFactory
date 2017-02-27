@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.daiwenbo.designmode.build.Room;
+import com.example.daiwenbo.designmode.build.WorkBuild;
 import com.example.daiwenbo.designmode.factory.MySqlDaoFactory;
 import com.example.daiwenbo.designmode.factory.SqlServiceDaoFactory;
 import com.example.daiwenbo.designmode.factory.bean.Role;
@@ -57,5 +59,8 @@ public class MainActivity extends AppCompatActivity {
         headHunter.addTalent(iTalent1);
 
         headHunter.publishJob("洗碗");
+
+
+        Room room = new WorkBuild().makeFllor("棕红色地板").makeWindow("蓝色窗户").getRoom();
     }
 }
