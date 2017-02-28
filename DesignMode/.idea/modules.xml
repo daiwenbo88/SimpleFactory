@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DesignMode.iml" filepath="$PROJECT_DIR$/DesignMode.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/命令模式/命令模式.iml" filepath="$PROJECT_DIR$/命令模式/命令模式.iml" />
+      <module fileurl="file://$PROJECT_DIR$/解释器模式/解释器模式.iml" filepath="$PROJECT_DIR$/解释器模式/解释器模式.iml" />
       <module fileurl="file://$PROJECT_DIR$/责任链模式/责任链模式.iml" filepath="$PROJECT_DIR$/责任链模式/责任链模式.iml" />
     </modules>
   </component>

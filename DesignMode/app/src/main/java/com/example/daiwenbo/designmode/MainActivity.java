@@ -1,5 +1,7 @@
 package com.example.daiwenbo.designmode;
 
+import android.app.Activity;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -20,15 +22,25 @@ import com.example.daiwenbo.designmode.simpefactory.Car;
 import com.example.daiwenbo.designmode.simpefactory.CarFactory;
 import com.example.daiwenbo.designmode.simpefactory.CarFactory2;
 import com.example.daiwenbo.designmode.subject.HeadHunter;
+import com.example.daiwenbo.designmode.util.HandlerUtils;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends Activity {
+    private final static int ONE=1;
     private TextView tv_text;
     protected final static String RED="红色";
     protected final static String BACK="黑色";
     protected final static String BULE="蓝色";
     private TextView tv_observice;
-
+    private HandlerUtils.HandlerHolder handlerHolder
+            =new HandlerUtils.HandlerHolder(new HandlerUtils.OnReceiveMessageListener() {
+        @Override
+        public void handlerMessage(Message msg) {
+            if (msg.arg1==ONE){
+                String message= (String) msg.obj;
+                tv_text.setText(message);
+            }
+        }
+    });
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,5 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         Room room = new WorkBuild().makeFllor("棕红色地板").makeWindow("蓝色窗户").getRoom();
+        Message message=Message.obtain();
+        message.obj="棕红色地板";
+        message.arg1=ONE;
+        handlerHolder.sendMessageDelayed(message,1000);
     }
 }
