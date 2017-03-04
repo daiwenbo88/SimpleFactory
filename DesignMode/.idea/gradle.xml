@@ -11,8 +11,13 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/命令模式" />
+            <option value="$PROJECT_DIR$/模板模式" />
+            <option value="$PROJECT_DIR$/状态模式" />
+            <option value="$PROJECT_DIR$/策略模式" />
+            <option value="$PROJECT_DIR$/观察者模式" />
             <option value="$PROJECT_DIR$/解释器模式" />
             <option value="$PROJECT_DIR$/责任链模式" />
+            <option value="$PROJECT_DIR$/迭代器模式" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

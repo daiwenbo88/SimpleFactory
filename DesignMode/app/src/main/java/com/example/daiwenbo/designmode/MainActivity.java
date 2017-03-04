@@ -1,9 +1,12 @@
 package com.example.daiwenbo.designmode;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.daiwenbo.designmode.build.Room;
@@ -27,6 +30,7 @@ import com.example.daiwenbo.designmode.util.HandlerUtils;
 public class MainActivity extends Activity {
     private final static int ONE=1;
     private TextView tv_text;
+    private ImageView image;
     protected final static String RED="红色";
     protected final static String BACK="黑色";
     protected final static String BULE="蓝色";
@@ -49,6 +53,7 @@ public class MainActivity extends Activity {
         Car car = CarFactory.newCar(RED);
         tv_text =(TextView)findViewById(R.id.tv_text);
         tv_observice =(TextView)findViewById(R.id.tv_observice);
+        image =(ImageView)findViewById(R.id.image);
         tv_text.setText(car.drive());
 
         car= CarFactory2.newCar(BuleCar.class);
@@ -78,5 +83,17 @@ public class MainActivity extends Activity {
         message.obj="棕红色地板";
         message.arg1=ONE;
         handlerHolder.sendMessageDelayed(message,1000);
+        ObjectAnimator animator=ObjectAnimator.ofFloat(image,"rotationX",0f,360f);
+        animator.setDuration(2000);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.setRepeatCount(-1);
+        animator.start();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handlerHolder.removeCallbacksAndMessages(null);
     }
 }
